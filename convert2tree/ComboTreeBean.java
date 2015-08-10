@@ -1,21 +1,16 @@
 package convert2tree;
 
-public class SourcePlainBean {
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+public class ComboTreeBean {
 	private String id;
 	private String name;
+	@JsonIgnore
 	private String pid;
+	private List<ComboTreeBean> children;
 	
-	public SourcePlainBean() {
-		super();
-	}
-	
-	public SourcePlainBean(String id, String name, String pid) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.pid = pid;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -34,4 +29,11 @@ public class SourcePlainBean {
 	public void setPid(String pid) {
 		this.pid = pid;
 	}
+	public List<ComboTreeBean> getChildren() {
+		return children;
+	}
+	public void setChildren(List<ComboTreeBean> children) {
+		this.children = children;
+	}
+	
 }

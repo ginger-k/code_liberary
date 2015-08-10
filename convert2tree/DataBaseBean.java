@@ -1,16 +1,21 @@
 package convert2tree;
 
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-public class TargetTreeBean {
+public class DataBaseBean {
 	private String id;
 	private String name;
-	@JsonIgnore
 	private String pid;
-	private List<TargetTreeBean> children;
 	
+	public DataBaseBean() {
+		super();
+	}
+	
+	public DataBaseBean(String id, String name, String pid) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.pid = pid;
+	}
+
 	public String getId() {
 		return id;
 	}
@@ -29,11 +34,4 @@ public class TargetTreeBean {
 	public void setPid(String pid) {
 		this.pid = pid;
 	}
-	public List<TargetTreeBean> getChildren() {
-		return children;
-	}
-	public void setChildren(List<TargetTreeBean> children) {
-		this.children = children;
-	}
-	
 }
